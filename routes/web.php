@@ -26,7 +26,7 @@ Route::middleware('auth')->prefix("admin")->name("admin.")->group(function () {
     })->name('dashboard');
 
     Route::resource("projects", ProjectController::class);
-    Route::resource("type", TypeController::class);
+    Route::resource("types", TypeController::class);
 });
 
 require __DIR__.'/auth.php';

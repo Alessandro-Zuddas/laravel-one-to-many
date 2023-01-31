@@ -6,7 +6,7 @@
 
     <h2>Categoria: 
         @if (isset($project->type->name))
-            {{ $project->type->name }}
+            <a href="{{ route("admin.types.show",  $project->type)}}">{{ $project->type->name }}</a>
         @else
             Nessuna categoria
         @endif
