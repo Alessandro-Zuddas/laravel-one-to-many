@@ -4,6 +4,14 @@
 
     <h1 class="mt-2">{{ $project->name }}</h1>
 
+    <h2>Categoria: 
+        @if (isset($project->type->name))
+            {{ $project->type->name }}
+        @else
+            Nessuna categoria
+        @endif
+    </h2>
+
     <ul>
         <li>{{ $project->description }}</li>
         <li>{{ $project->date }}</li>
