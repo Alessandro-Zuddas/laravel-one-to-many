@@ -34,6 +34,15 @@
             <label for="project_image" class="form-label">Scegli un'immagine:</label>
             <input type="file" class="form-control" id="project_image" name="project_image" placeholder="Inserisci un'immagine" value="{{ old("project_image") }}">
         </div>
+        <div class="mb-3">
+            <label for="type_id" class="form-label">Scegli una categoria:</label>
+            <select class="form-select" name="type_id" id="type_id">
+                <option value="">Senza categoria</option>
+                @foreach($types as $type)
+                    <option value="{{ $type->id }}" {{ old("type_id") == $type->id ? "selected" : "" }} >{{ $type->name }}</option>
+                @endforeach
+            </select>
+        </div>
 
         <button type="submit" class="btn btn-success">Crea</button>
         <a href="{{ route("admin.projects.index") }}" class="btn btn-secondary">Indietro</a>
